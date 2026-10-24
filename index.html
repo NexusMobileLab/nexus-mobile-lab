@@ -1,168 +1,72 @@
-
-<!DOCTYPE html>
-<html lang="my">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080d18">
-<title>MYANMAR AI BUDDY</title>
-<style>
-*{box-sizing:border-box}
-body{
- margin:0;background:#080d18;color:#eaf5ff;
- font-family:Arial,sans-serif;min-height:100vh;
-}
-header{
- padding:20px 16px;background:#101a2b;
- border-bottom:1px solid #183c5b;
- display:flex;align-items:center;gap:12px;
-}
-.logo{
- width:45px;height:45px;border-radius:15px;
- background:#071e33;border:1px solid #18cfff;
- display:grid;place-items:center;
- color:#35dcff;font-size:23px;
- box-shadow:0 0 18px #00bfff35;
-}
-h1{font-size:17px;margin:0 0 5px}
-.status{font-size:12px;color:#69d9ad}
-main{max-width:600px;margin:auto;padding:20px 16px}
-.hero{text-align:center;padding:25px 0 20px}
-.eye{
- width:116px;height:116px;margin:auto auto 18px;
- border-radius:50%;border:1px solid #17cfff;
- background:radial-gradient(circle,#123e62,#07101f 68%);
- display:grid;place-items:center;
- box-shadow:0 0 35px #00aaff30;
- animation:pulse 3s infinite;
-}
-.eye span{font-size:49px;color:#47dcff}
-@keyframes pulse{
- 50%{box-shadow:0 0 45px #00bfff55}
-}
-.hero h2{font-size:22px;margin:8px 0}
-.hero p{color:#91a9c2;font-size:14px;line-height:1.7}
-.panel{
- background:#101a2b;border:1px solid #1b3550;
- border-radius:18px;padding:15px;margin-top:15px;
-}
-.panel h3{font-size:14px;margin:0 0 12px}
-#chat{display:flex;flex-direction:column;gap:12px}
-.msg{
- padding:12px 14px;border-radius:14px;
- font-size:14px;line-height:1.7;
- overflow-wrap:anywhere;
-}
-.bot{background:#17283d;align-self:flex-start;max-width:95%}
-.user{background:#075a80;align-self:flex-end;max-width:95%}
-form{display:flex;gap:8px;margin-top:14px}
-input{
- flex:1;min-width:0;padding:13px;
- background:#080f1c;color:white;
- border:1px solid #28445e;border-radius:12px;
- font-size:14px;outline:none;
-}
-button{
- padding:12px 15px;border:0;border-radius:12px;
- background:#08bde8;color:#06111c;
- font-weight:bold;font-size:14px;
-}
-button:active{opacity:.75}
-.note{color:#8399b0;font-size:12px;line-height:1.7}
-footer{text-align:center;color:#627a94;font-size:11px;padding:24px}
-</style>
-</head>
-<body>
-<header>
- <div class="logo">N</div>
- <div>
-  <h1>NEXUS MOBILE LAB</h1>
-  <div class="status">● MYANMAR AI BUDDY · v1.0</div>
- </div>
-</header>
-
 <!DOCTYPE html>
 <html lang="my">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#070b14">
-  <meta name="description" content="NEXUS MOBILE LAB - MYANMAR AI BUDDY">
-  <title>MYANMAR AI BUDDY</title>
+  <meta name="theme-color" content="#061126">
+  <meta name="description" content="NEXUS MOBILE LAB - MIYA AI BUDDY">
+  <title>MIYA — MYANMAR AI BUDDY</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
   <header class="topbar">
     <div class="brand-icon">N</div>
-    <div>
-      <h1 class="brand-name">NEXUS MOBILE LAB</h1>
-      <div class="brand-status">● MYANMAR AI BUDDY · v1.0</div>
+    <div class="brand-copy">
+      <h1>NEXUS MOBILE LAB</h1>
+      <p><span class="live-dot"></span> MIYA · MYANMAR AI BUDDY</p>
     </div>
+    <div class="top-links"><span>Build</span><span>Learn</span><span>Create</span></div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="avatar-stage" aria-label="AI Avatar">
-        <div class="avatar-aura"></div>
-        <div class="avatar">
-          <div class="hair"></div>
-          <div class="face">
-            <div class="eyes">
-              <div class="eye"></div>
-              <div class="eye"></div>
-            </div>
-            <div class="mouth"></div>
-          </div>
-        </div>
+      <div class="portrait-wrap">
+        <div class="portrait-ring"></div>
+        <img class="portrait" src="assets/miya-avatar.svg" alt="Miya anime AI assistant">
       </div>
-      <h2>မင်္ဂလာပါ ယဖ ❤️</h2>
-      <p>ကျွန်တော်က MYANMAR AI BUDDY ပါ။<br>
-        အတူတူ လေ့လာပြီး တည်ဆောက်ကြမယ်။</p>
+      <div class="hero-copy">
+        <p class="eyebrow">YOUR FRIENDLY AI COMPANION</p>
+        <h2>မင်္ဂလာပါရှင့် 💙</h2>
+        <p>ကျွန်မနာမည်က <strong>Mi ya (Miya)</strong> ပါရှင့်။<br>ဘာကူညီပေးရမလဲရှင့်။</p>
+        <div class="hero-chip"><span class="live-dot"></span> အဆင်သင့်ရှိပါတယ်ရှင့်</div>
+      </div>
     </section>
 
-    <section class="panel">
-      <h3 class="panel-title">💬 AI စကားပြောခန်း</h3>
+    <section class="panel chat-panel">
+      <div class="panel-heading">
+        <h3><span class="heading-icon">●</span> Miya နဲ့ စကားပြောမယ်</h3>
+        <span class="status-pill"><span class="live-dot"></span> Offline Demo</span>
+      </div>
       <div id="chat" class="chat" aria-live="polite">
-        <div class="msg bot">
-          မင်္ဂလာပါ ယဖ။ စာရိုက်ပြီး စကားပြောကြည့်ပါ။
-          လက်ရှိမှာ Offline Demo ကို စမ်းသပ်နိုင်ပါတယ်။
+        <div class="message-row">
+          <img class="mini-avatar" src="assets/miya-avatar.svg" alt="">
+          <div class="msg bot">မင်္ဂလာပါရှင့် 💙 ကျွန်မက Miya ပါ။ ဘာကူညီပေးရမလဲရှင့်။</div>
         </div>
       </div>
-
       <form id="form" class="chat-form">
-        <input
-          id="message"
-          class="chat-input"
-          type="text"
-          placeholder="ယဖ ဘာပြောချင်လဲ..."
-          autocomplete="off"
-          aria-label="မက်ဆေ့ချ်"
-          required>
-        <button class="action-btn" type="submit">ပို့မယ်</button>
+        <span class="input-symbol">✧</span>
+        <input id="message" class="chat-input" type="text" placeholder="Miya ကို ပြောချင်တာ ရိုက်ထည့်ပါ..." autocomplete="off" aria-label="မက်ဆေ့ချ်" required>
+        <button class="action-btn" type="submit">➤ <span>ပို့မယ်</span></button>
       </form>
-
-      <div class="tools">
-        <button class="tool-btn" type="button"
-          data-message="မင်္ဂလာပါ ယဖ">👋 နှုတ်ဆက်မယ်</button>
-        <button class="tool-btn" type="button"
-          data-message="မင်းနာမည်က ဘာလဲ">🤖 မိတ်ဆက်ပါ</button>
+      <div class="quick-actions">
+        <button class="tool-btn" type="button" data-message="မင်္ဂလာပါ Miya">👋 နှုတ်ဆက်မယ်</button>
+        <button class="tool-btn" type="button" data-message="နာမည်ဘယ်လိုခေါ်လဲ">🤖 မိတ်ဆက်ပါ</button>
+        <button class="tool-btn" type="button" data-message="ဘာတွေကူညီပေးနိုင်လဲ">✦ ကူညီနိုင်တာတွေ</button>
       </div>
     </section>
 
-    <section class="panel">
-      <h3 class="panel-title">⚙️ စနစ်အခြေအနေ</h3>
-      <div class="system-note">
-        Interface: အသင့်<br>
-        Avatar Animation: အသင့်<br>
-        Chat: Offline Demo<br>
-        Online AI: မချိတ်ဆက်ရသေးပါ<br>
-        Android APK: မတည်ဆောက်ရသေးပါ
+    <section class="panel system-panel">
+      <div class="panel-heading"><h3>⚙ စနစ်အခြေအနေ</h3></div>
+      <div class="system-grid">
+        <div class="system-item"><span class="sys-icon">▣</span><span>Interface</span><strong><i class="green-dot"></i> အသင့်</strong></div>
+        <div class="system-item"><span class="sys-icon">☁</span><span>Online AI</span><strong><i class="red-dot"></i> မချိတ်ဆက်ရသေးပါ</strong></div>
+        <div class="system-item"><span class="sys-icon">◉</span><span>Miya Avatar</span><strong><i class="green-dot"></i> အသင့်</strong></div>
+        <div class="system-item"><span class="sys-icon">▣</span><span>Android APK</span><strong><i class="amber-dot"></i> မတည်ဆောက်ရသေးပါ</strong></div>
+        <div class="system-item"><span class="sys-icon">☏</span><span>Chat</span><strong><i class="green-dot"></i> Offline Demo</strong></div>
       </div>
     </section>
   </main>
-
-  <footer>NEXUS MOBILE LAB · MYANMAR AI BUDDY</footer>
-
-  <script src="app.js" defer></script>
+  <footer><span></span>NEXUS MOBILE LAB · MIYA AI BUDDY<span></span></footer>
 </body>
 </html>
