@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Miya AI Eyes</title>
+  <desc id="desc">A futuristic pair of glowing cyan AI eyes with blinking animation.</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="75%">
+      <stop offset="0" stop-color="#102f66"/>
+      <stop offset=".55" stop-color="#06152f"/>
+      <stop offset="1" stop-color="#020713"/>
+    </radialGradient>
+    <linearGradient id="iris" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e6ffff"/>
+      <stop offset=".25" stop-color="#39f5ff"/>
+      <stop offset=".7" stop-color="#087dff"/>
+      <stop offset="1" stop-color="#1733a7"/>
+    </linearGradient>
+    <linearGradient id="lid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#42f4ff" stop-opacity=".95"/>
+      <stop offset="1" stop-color="#1175ff" stop-opacity=".25"/>
+    </linearGradient>
+    <filter id="glow" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="leftEyeClip"><path d="M62 220 Q145 145 232 220 Q150 303 62 220Z"/></clipPath>
+    <clipPath id="rightEyeClip"><path d="M280 220 Q367 145 450 220 Q362 303 280 220Z"/></clipPath>
+  </defs>
+  <rect width="512" height="512" rx="92" fill="url(#bg)"/>
+  <circle cx="256" cy="235" r="186" fill="none" stroke="#087cff" stroke-opacity=".23" stroke-width="2"/>
+  <circle cx="256" cy="235" r="164" fill="none" stroke="#2cecff" stroke-opacity=".18" stroke-width="1.5" stroke-dasharray="5 12">
+    <animateTransform attributeName="transform" type="rotate" from="0 256 235" to="360 256 235" dur="32s" repeatCount="indefinite"/>
+  </circle>
+  <path d="M52 177 L83 177 L99 159 M429 159 L445 177 L460 177 M52 278 L83 278 L99 296 M429 296 L445 278 L460 278" fill="none" stroke="#17dfff" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+  <g filter="url(#glow)">
+    <path d="M48 220 Q145 132 246 220 Q148 319 48 220Z" fill="#071a3c" stroke="url(#lid)" stroke-width="4"/>
+    <path d="M266 220 Q367 132 464 220 Q364 319 266 220Z" fill="#071a3c" stroke="url(#lid)" stroke-width="4"/>
+  </g>
+  <g clip-path="url(#leftEyeClip)">
+    <ellipse cx="149" cy="222" rx="39" ry="48" fill="url(#iris)" stroke="#8cffff" stroke-width="3">
+      <animate attributeName="cx" values="149;158;149;140;149" dur="6s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="149" cy="224" rx="17" ry="29" fill="#031027">
+      <animate attributeName="cx" values="149;158;149;140;149" dur="6s" repeatCount="indefinite"/>
+    </ellipse>
+    <circle cx="136" cy="204" r="10" fill="#fff" opacity=".95"/>
+    <circle cx="160" cy="239" r="5" fill="#bfffff"/>
+  </g>
+  <g clip-path="url(#rightEyeClip)">
+    <ellipse cx="363" cy="222" rx="39" ry="48" fill="url(#iris)" stroke="#8cffff" stroke-width="3">
+      <animate attributeName="cx" values="363;372;363;354;363" dur="6s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="363" cy="224" rx="17" ry="29" fill="#031027">
+      <animate attributeName="cx" values="363;372;363;354;363" dur="6s" repeatCount="indefinite"/>
+    </ellipse>
+    <circle cx="350" cy="204" r="10" fill="#fff" opacity=".95"/>
+    <circle cx="374" cy="239" r="5" fill="#bfffff"/>
+  </g>
+  <g fill="none" stroke="#38eaff" stroke-width="4" stroke-linecap="round" filter="url(#glow)">
+    <path d="M63 206 Q145 139 230 206"/>
+    <path d="M282 206 Q367 139 449 206"/>
+  </g>
+  <!-- eyelids blink every few seconds -->
+  <g>
+    <path d="M48 180 Q145 180 246 180 L246 222 Q148 319 48 220Z" fill="#06152f" opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.42;0.44;0.46;0.48;1" dur="5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M266 180 Q367 180 464 180 L464 220 Q364 319 266 222Z" fill="#06152f" opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.42;0.44;0.46;0.48;1" dur="5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  <path d="M196 345 L316 345" stroke="#16dfff" stroke-width="2" opacity=".7"/>
+  <text x="256" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" font-weight="700" letter-spacing="5" fill="#b9faff">MIYA</text>
+  <text x="256" y="414" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" letter-spacing="3" fill="#39aaff">AI COMPANION</text>
+  <circle cx="256" cy="455" r="4" fill="#3df4ff" filter="url(#glow)">
+    <animate attributeName="opacity" values=".3;1;.3" dur="1.6s" repeatCount="indefinite"/>
+  </circle>
+</svg>
