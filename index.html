@@ -80,58 +80,89 @@ footer{text-align:center;color:#627a94;font-size:11px;padding:24px}
   <div class="status">● MYANMAR AI BUDDY · v1.0</div>
  </div>
 </header>
-<main>
- <section class="hero">
-  <div class="eye"><span>◉</span></div>
-  <h2>မင်္ဂလာပါ ယဖ ❤️</h2>
-  <p>MYANMAR AI BUDDY မှ ကြိုဆိုပါတယ်။<br>
-  မြန်မာလို စာရိုက်ပြီး စကားပြောနိုင်ပါတယ်။</p>
- </section>
- <section class="panel">
-  <h3>💬 AI စကားပြောခန်း</h3>
-  <div id="chat" aria-live="polite">
-   <div class="msg bot">
-    မင်္ဂလာပါ ယဖ။ ကျွန်တော်က MYANMAR AI BUDDY ပါ။<br>
-    အခုက စမ်းသပ်ဗားရှင်းဖြစ်ပြီး နောက်အဆင့်မှာ AI ချိတ်ဆက်ပေးမယ်။
-   </div>
-  </div>
-  <form id="form">
-   <input id="message" placeholder="ယဖ ဘာပြောချင်လဲ..." autocomplete="off">
-   <button type="submit">ပို့မယ်</button>
-  </form>
- </section>
- <section class="panel">
-  <h3>⚙️ စနစ်အခြေအနေ</h3>
-  <p class="note">Interface: အဆင်သင့်<br>
-  Chat UI: အဆင်သင့်<br>
-  AI Backend: မချိတ်ဆက်ရသေးပါ<br>
-  Android APK: Build မလုပ်ရသေးပါ</p>
- </section>
-</main>
-<footer>NEXUS MOBILE LAB · MYANMAR AI BUDDY</footer>
-<script>
-const form=document.getElementById('form');
-const input=document.getElementById('message');
-const chat=document.getElementById('chat');
 
-form.addEventListener('submit',function(e){
- e.preventDefault();
- const text=input.value.trim();
- if(!text)return;
+<!DOCTYPE html>
+<html lang="my">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070b14">
+  <meta name="description" content="NEXUS MOBILE LAB - MYANMAR AI BUDDY">
+  <title>MYANMAR AI BUDDY</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-icon">N</div>
+    <div>
+      <h1 class="brand-name">NEXUS MOBILE LAB</h1>
+      <div class="brand-status">● MYANMAR AI BUDDY · v1.0</div>
+    </div>
+  </header>
 
- const user=document.createElement('div');
- user.className='msg user';
- user.textContent=text;
- chat.appendChild(user);
- input.value='';
+  <main>
+    <section class="hero">
+      <div class="avatar-stage" aria-label="AI Avatar">
+        <div class="avatar-aura"></div>
+        <div class="avatar">
+          <div class="hair"></div>
+          <div class="face">
+            <div class="eyes">
+              <div class="eye"></div>
+              <div class="eye"></div>
+            </div>
+            <div class="mouth"></div>
+          </div>
+        </div>
+      </div>
+      <h2>မင်္ဂလာပါ ယဖ ❤️</h2>
+      <p>ကျွန်တော်က MYANMAR AI BUDDY ပါ။<br>
+        အတူတူ လေ့လာပြီး တည်ဆောက်ကြမယ်။</p>
+    </section>
 
- const bot=document.createElement('div');
- bot.className='msg bot';
- bot.textContent='ယဖရေ၊ မင်းပြောတာကို ဒီစမ်းသပ်ဗားရှင်းက လက်ခံရရှိပြီ။ AI အဖြေပြန်နိုင်ဖို့ Backend ချိတ်ဆက်တဲ့အဆင့်ကို ဆက်လုပ်ရမယ်။';
- chat.appendChild(bot);
- chat.scrollIntoView({behavior:'smooth',block:'end'});
-});
-</script>
+    <section class="panel">
+      <h3 class="panel-title">💬 AI စကားပြောခန်း</h3>
+      <div id="chat" class="chat" aria-live="polite">
+        <div class="msg bot">
+          မင်္ဂလာပါ ယဖ။ စာရိုက်ပြီး စကားပြောကြည့်ပါ။
+          လက်ရှိမှာ Offline Demo ကို စမ်းသပ်နိုင်ပါတယ်။
+        </div>
+      </div>
+
+      <form id="form" class="chat-form">
+        <input
+          id="message"
+          class="chat-input"
+          type="text"
+          placeholder="ယဖ ဘာပြောချင်လဲ..."
+          autocomplete="off"
+          aria-label="မက်ဆေ့ချ်"
+          required>
+        <button class="action-btn" type="submit">ပို့မယ်</button>
+      </form>
+
+      <div class="tools">
+        <button class="tool-btn" type="button"
+          data-message="မင်္ဂလာပါ ယဖ">👋 နှုတ်ဆက်မယ်</button>
+        <button class="tool-btn" type="button"
+          data-message="မင်းနာမည်က ဘာလဲ">🤖 မိတ်ဆက်ပါ</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h3 class="panel-title">⚙️ စနစ်အခြေအနေ</h3>
+      <div class="system-note">
+        Interface: အသင့်<br>
+        Avatar Animation: အသင့်<br>
+        Chat: Offline Demo<br>
+        Online AI: မချိတ်ဆက်ရသေးပါ<br>
+        Android APK: မတည်ဆောက်ရသေးပါ
+      </div>
+    </section>
+  </main>
+
+  <footer>NEXUS MOBILE LAB · MYANMAR AI BUDDY</footer>
+
+  <script src="app.js" defer></script>
 </body>
-  </html>
-  
+</html>
