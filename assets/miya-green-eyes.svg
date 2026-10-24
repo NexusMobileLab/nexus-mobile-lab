@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-label="Miya green cyber eyes animated assistant">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="70%">
+      <stop offset="0" stop-color="#102c36"/>
+      <stop offset="1" stop-color="#030a12"/>
+    </radialGradient>
+    <linearGradient id="lid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5effd0"/>
+      <stop offset=".5" stop-color="#18c995"/>
+      <stop offset="1" stop-color="#08795f"/>
+    </linearGradient>
+    <radialGradient id="iris" cx="45%" cy="35%" r="65%">
+      <stop offset="0" stop-color="#d7fff1"/>
+      <stop offset=".25" stop-color="#5dffc5"/>
+      <stop offset=".62" stop-color="#00c987"/>
+      <stop offset="1" stop-color="#075b55"/>
+    </radialGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="leftEye"><path d="M28 105 Q77 54 142 100 Q92 154 28 105Z"/></clipPath>
+    <clipPath id="rightEye"><path d="M178 100 Q243 54 292 105 Q228 154 178 100Z"/></clipPath>
+  </defs>
+  <rect x="5" y="5" width="310" height="210" rx="28" fill="url(#bg)" stroke="#13d9a0" stroke-opacity=".65"/>
+  <path d="M18 35H55 M265 35H302 M18 185H55 M265 185H302" stroke="#24f5bb" stroke-width="2" opacity=".65"/>
+  <circle cx="160" cy="110" r="79" fill="none" stroke="#0de5a6" stroke-width="1" opacity=".15"/>
+  <circle cx="160" cy="110" r="65" fill="none" stroke="#0de5a6" stroke-width="1" stroke-dasharray="4 7" opacity=".45"/>
+  <g filter="url(#glow)">
+    <path d="M22 105 Q77 48 148 100 Q94 160 22 105Z" fill="#071c22" stroke="url(#lid)" stroke-width="3"/>
+    <path d="M172 100 Q243 48 298 105 Q226 160 172 100Z" fill="#071c22" stroke="url(#lid)" stroke-width="3"/>
+    <g clip-path="url(#leftEye)">
+      <ellipse class="iris" cx="87" cy="105" rx="24" ry="30" fill="url(#iris)">
+        <animate attributeName="cy" values="105;101;105;108;105" dur="4s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="87" cy="105" rx="10" ry="20" fill="#031a17">
+        <animate attributeName="cy" values="105;101;105;108;105" dur="4s" repeatCount="indefinite"/>
+      </ellipse>
+      <circle cx="78" cy="94" r="7" fill="#f1fff9"/>
+      <circle cx="96" cy="115" r="3" fill="#c8fff0"/>
+    </g>
+    <g clip-path="url(#rightEye)">
+      <ellipse cx="233" cy="105" rx="24" ry="30" fill="url(#iris)">
+        <animate attributeName="cy" values="105;101;105;108;105" dur="4s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="233" cy="105" rx="10" ry="20" fill="#031a17">
+        <animate attributeName="cy" values="105;101;105;108;105" dur="4s" repeatCount="indefinite"/>
+      </ellipse>
+      <circle cx="224" cy="94" r="7" fill="#f1fff9"/>
+      <circle cx="242" cy="115" r="3" fill="#c8fff0"/>
+    </g>
+    <path d="M25 102 Q77 49 145 98 M175 98 Q243 49 295 102" fill="none" stroke="#b8ffe8" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <g opacity=".8" stroke="#3dffbd" stroke-width="1.5" fill="none">
+    <path d="M160 29v13 M153 35h14 M160 178v13 M153 184h14"/>
+    <path d="M44 72l8 8 M52 72l-8 8 M268 72l8 8 M276 72l-8 8"/>
+  </g>
+  <text x="160" y="202" font-family="Arial,sans-serif" font-size="10" letter-spacing="3" text-anchor="middle" fill="#8affd9">MIYA • ACTIVE</text>
+  <g>
+    <rect x="138" y="14" width="44" height="16" rx="8" fill="#063d31" stroke="#27f5b2"/>
+    <text x="160" y="25" font-family="Arial,sans-serif" font-size="8" text-anchor="middle" fill="#b5ffe7">AI</text>
+  </g>
+  <animate attributeName="opacity" values="1;1;1;1" dur="1s" repeatCount="indefinite"/>
+</svg>
