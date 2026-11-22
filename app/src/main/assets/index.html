@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#061126">
+<title>NEXUS GUARDIAN</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;
+ background:radial-gradient(circle at 50% 35%,#123b43,#061126 65%);
+ color:#dffff2;font-family:Arial,sans-serif;
+ display:flex;align-items:center;justify-content:center;
+ text-align:center;padding:20px
+}
+.panel{width:100%;max-width:420px}
+h1{letter-spacing:4px;color:#64ffc1;font-size:25px}
+.avatar{
+ width:230px;height:230px;object-fit:cover;
+ border-radius:50%;border:2px solid #53ffc0;
+ box-shadow:0 0 35px #00ffae66;
+}
+h2{color:#73ffc8;letter-spacing:3px}
+.status{color:#a4cfc4;font-size:13px}
+button{
+ background:#103b39;color:#8dffd1;
+ border:1px solid #52ffc0;border-radius:22px;
+ padding:12px 18px;margin:6px;font-size:14px
+}
+#message{margin:25px 0;color:#e4fff4}
+</style>
+</head>
+<body>
+<div class="panel">
+<h1>NEXUS GUARDIAN</h1>
+<img class="avatar" src="miya.png" alt="MIYA AI">
+<h2>MIYA</h2>
+<p class="status">MYANMAR AI ASSISTANT</p>
+<div id="message">မင်္ဂလာပါ။ MIYA က အသင့်ရှိနေပါတယ်။</div>
+<button onclick="setMode('Listening')">LISTEN</button>
+<button onclick="setMode('Thinking')">THINK</button>
+<button onclick="setMode('Speaking')">SPEAK</button>
+<p class="status" id="status">SYSTEM ONLINE</p>
+</div>
+<script>
+function setMode(mode){
+ document.getElementById('status').textContent='MIYA: '+mode;
+}
+</script>
+</body>
+</html>
