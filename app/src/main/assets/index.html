@@ -1,52 +1,102 @@
-
 <!DOCTYPE html>
-<html lang="my">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta name="theme-color" content="#061126">
-<title>NEXUS GUARDIAN</title>
+<title>NEXUS GUARDIAN v0.3</title>
 <style>
-*{box-sizing:border-box}
-body{
- margin:0;min-height:100vh;
- background:radial-gradient(circle at 50% 35%,#123b43,#061126 65%);
- color:#dffff2;font-family:Arial,sans-serif;
- display:flex;align-items:center;justify-content:center;
- text-align:center;padding:20px
-}
-.panel{width:100%;max-width:420px}
-h1{letter-spacing:4px;color:#64ffc1;font-size:25px}
-.avatar{
- width:230px;height:230px;object-fit:cover;
- border-radius:50%;border:2px solid #53ffc0;
- box-shadow:0 0 35px #00ffae66;
-}
-h2{color:#73ffc8;letter-spacing:3px}
-.status{color:#a4cfc4;font-size:13px}
-button{
- background:#103b39;color:#8dffd1;
- border:1px solid #52ffc0;border-radius:22px;
- padding:12px 18px;margin:6px;font-size:14px
-}
-#message{margin:25px 0;color:#e4fff4}
+:root{--g:#35ff9a;--c:#48eaff;--bg:#061126}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;background:radial-gradient(ellipse at 50% 35%,#153d43,#071629 58%,#020712);color:#effff8;font-family:Arial,sans-serif}
+.app{min-height:100vh;padding:18px 14px 26px;display:flex;align-items:center;flex-direction:column}
+header{width:100%;max-width:480px;display:flex;justify-content:space-between;align-items:center}
+.brand{font-weight:bold;letter-spacing:3px;color:var(--g);font-size:14px}
+.ver{font-size:10px;letter-spacing:2px;color:#8bb9ac}
+.status{margin-top:18px;color:var(--g);font-size:11px;letter-spacing:4px;text-shadow:0 0 12px var(--g)}
+.avatar-wrap{width:min(88vw,370px);height:min(65vh,500px);min-height:340px;margin:10px auto 0;position:relative;display:flex;align-items:center;justify-content:center}
+.aura{position:absolute;width:90%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(53,255,154,.2),transparent 68%);animation:pulse 3s infinite alternate}
+@keyframes pulse{to{transform:scale(1.13);opacity:.55}}
+.avatar{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 18px rgba(53,255,154,.22));animation:float 4s ease-in-out infinite;transform-origin:center}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.avatar.blink{filter:drop-shadow(0 0 25px rgba(53,255,154,.55))}
+.name{font-size:25px;letter-spacing:8px;text-shadow:0 0 15px var(--g)}
+.subtitle{margin-top:6px;font-size:9px;letter-spacing:3px;color:#8cbcaf}
+.panel{width:100%;max-width:440px;margin-top:22px;padding:16px;border:1px solid rgba(53,255,154,.24);border-radius:17px;background:rgba(3,18,31,.78)}
+.panel-title{font-size:10px;letter-spacing:3px;color:var(--g);margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+button{padding:12px 3px;border-radius:9px;border:1px solid rgba(53,255,154,.3);background:rgba(53,255,154,.07);color:#eafff4;font-size:11px}
+button.active{background:rgba(53,255,154,.25);border-color:var(--g);box-shadow:0 0 12px rgba(53,255,154,.2)}
+.hint{margin-top:12px;text-align:center;color:#789d91;font-size:10px;line-height:1.5}
+.footer{margin-top:20px;color:#54776c;font-size:9px;letter-spacing:2px;text-align:center}
+@media(max-height:700px){.avatar-wrap{height:43vh;min-height:270px}.panel{margin-top:12px}}
 </style>
 </head>
 <body>
-<div class="panel">
-<h1>NEXUS GUARDIAN</h1>
-<img class="avatar" src="miya.png" alt="MIYA AI">
-<h2>MIYA</h2>
-<p class="status">MYANMAR AI ASSISTANT</p>
-<div id="message">မင်္ဂလာပါ။ MIYA က အသင့်ရှိနေပါတယ်။</div>
-<button onclick="setMode('Listening')">LISTEN</button>
-<button onclick="setMode('Thinking')">THINK</button>
-<button onclick="setMode('Speaking')">SPEAK</button>
-<p class="status" id="status">SYSTEM ONLINE</p>
+<div class="app">
+<header><div class="brand">NEXUS GUARDIAN</div><div class="ver">ANDROID v0.3</div></header>
+<div class="status" id="status">SYSTEM ONLINE</div>
+<div class="avatar-wrap"><div class="aura"></div><img id="avatar" class="avatar" src="miya.png" alt="Miya AI Girl"></div>
+<div class="name">MIYA</div>
+<div class="subtitle">YOUR DIGITAL GUARDIAN</div>
+<section class="panel">
+<div class="panel-title">MIYA EXPRESSION CONTROL</div>
+<div class="grid">
+<button class="active" onclick="mode('IDLE',this)">IDLE</button>
+<button onclick="mode('HAPPY',this)">HAPPY</button>
+<button onclick="mode('CURIOUS',this)">CURIOUS</button>
+<button onclick="mode('SURPRISED',this)">SURPRISE</button>
+<button onclick="mode('SLEEPY',this)">SLEEPY</button>
+<button onclick="mode('SCAN',this)">SCAN</button>
+<button onclick="mode('LISTENING',this)">LISTEN</button>
+<button onclick="mode('THINKING',this)">THINK</button>
+<button onclick="mode('SPEAKING',this)">SPEAK</button>
+<button onclick="mode('SLEEP',this)">SLEEP</button>
+<button onclick="mode('WAKE',this)">WAKE</button>
+</div>
+<div class="hint" id="hint">မင်္ဂလာပါ။ Miya ကူညီပေးဖို့ အသင့်ရှိနေပါတယ်။</div>
+</section>
+<div class="footer">NEXUS MOBILE LAB · MIYA AI</div>
 </div>
 <script>
-function setMode(mode){
- document.getElementById('status').textContent='MIYA: '+mode;
+const statusEl=document.getElementById('status');
+const hint=document.getElementById('hint');
+const avatar=document.getElementById('avatar');
+let sleeping=false;
+let blinkTimer;
+function blink(){
+ if(sleeping)return;
+ avatar.classList.add('blink');
+ setTimeout(()=>avatar.classList.remove('blink'),180);
+}
+function scheduleBlink(){
+ clearTimeout(blinkTimer);
+ if(sleeping)return;
+ blinkTimer=setTimeout(()=>{blink();scheduleBlink()},2500+Math.random()*2500);
+}
+scheduleBlink();
+const messages={
+ IDLE:'မင်္ဂလာပါ။ Miya ကူညီပေးဖို့ အသင့်ရှိနေပါတယ်။',
+ HAPPY:'Miya ပျော်ရွှင်နေပါတယ်။ 💚',
+ CURIOUS:'စိတ်ဝင်စားစရာကောင်းတယ်နော်။',
+ SURPRISED:'အိုး! အံ့ဩစရာပဲ။',
+ SLEEPY:'Miya နည်းနည်းအိပ်ငိုက်နေပြီ။',
+ SCAN:'Scanning animation mode — demo only.',
+ LISTENING:'Listening mode — microphone မချိတ်ဆက်ရသေးပါ။',
+ THINKING:'Miya စဉ်းစားနေပါတယ်။',
+ SPEAKING:'Speaking mode — voice မချိတ်ဆက်ရသေးပါ။',
+ SLEEP:'Sleep mode.',
+ WAKE:'ပြန်လာပြီနော်။ ကြိုဆိုပါတယ်။'
+};
+function mode(m,btn){
+ sleeping=(m==='SLEEP');
+ statusEl.textContent=m==='IDLE'?'SYSTEM ONLINE':m+' MODE';
+ hint.textContent=messages[m]||'';
+ document.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+ if(btn)btn.classList.add('active');
+ if(m==='HAPPY'||m==='SURPRISED'||m==='WAKE')blink();
+ if(m==='WAKE'){sleeping=false;scheduleBlink();}
+ if(sleeping)clearTimeout(blinkTimer);else scheduleBlink();
 }
 </script>
 </body>
